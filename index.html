@@ -87,6 +87,16 @@
       border-radius: 5px;
       font-size: 14px;
     }
+    .project-image {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #2c3e50;
+  }  
   </style>
 </head>
 <body>
@@ -135,10 +145,20 @@
 
   <section>
     <h2>Projects</h2>
-    <p><strong>Instagram Clone</strong> – ReactJS, Flask, SQL</p>
+
+    <p><strong>Search Engine</strong> – Python, Bash, HTML/CS</p>
+    <img src="search_engine.png" alt="Search Engine Homepage" class="project-image" />
     <ul>
-      <li>Built full-featured Instagram clone with CRUD posts/comments/likes and REST API backend</li>
-      <li>Deployed on AWS EC2; used Bash scripting for deployment automation</li>
+      <li>Produced a scalable search engine similar to Google, implementing an inverted index of web pages using a pipeline of MapReduce programs, a REST API, and UI to return the top 10 search results.</li>
+    </ul>
+    <p><strong>Instagram Clone</strong> – JavaScript, Python, Bash, HTML/CSS (ReactJS)</p>
+    <img src="instagram_clone.png" alt="Instagram Clone" class="project-image" />
+    <ul>
+      <li>Developed a clone of Instagram that enables CRUD operations for accounts, posts, comments, and likes via a SQL database, Flask, REST API, and ReactJS components for posts and feeds. Deployed on EC2.</li>
+    </ul>
+    <p><strong>Pipelined Processor</strong> – C</p>
+    <ul>
+      <li>Built a 5-stage pipelined processor simulator for the University of Michigan’s LC2K ISA, handling data and control hazards, register forwarding, and branch prediction for assembly instructions.</li>
     </ul>
   </section>
 
