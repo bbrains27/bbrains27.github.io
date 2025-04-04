@@ -14,12 +14,14 @@
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
+      transition: background-color 0.3s, color 0.3s;
     }
     h1, h2 {
       color: #2c3e50;
     }
     h1 {
       font-size: 2.2em;
+      text-align: center;
     }
     a {
       color: #0077cc;
@@ -37,16 +39,74 @@
     li {
       margin-bottom: 0.5em;
     }
+    /* Profile Picture */
+    .profile {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2c3e50;
+    }
+    /* Button Styling */
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #0077cc;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #005fa3;
+    }
+    /* Dark Mode */
+    .dark-mode {
+      background-color: #2c3e50;
+      color: #f4f4f4;
+    }
+    .dark-mode h1, .dark-mode h2 {
+      color: #f4f4f4;
+    }
+    .dark-mode a {
+      color: #4aa3df;
+    }
+    .toggle-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .toggle-btn {
+      cursor: pointer;
+      padding: 8px 12px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
+  <div class="toggle-container">
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+  </div>
+
+  <img src="pfp.jpg" alt="Broderick Rains" class="profile" />
+
   <h1>Broderick Rains</h1>
-  <p>
+  <p style="text-align: center;">
     📧 <a href="mailto:bbrains@umich.edu">bbrains@umich.edu</a> |
     📍 Saline, MI |
     🔗 <a href="https://www.linkedin.com/in/broderick-rains-5a289528a" target="_blank">LinkedIn</a>
   </p>
+  
+  <div style="text-align: center;">
+    <a href="Broderick_Rains_Resume.pdf" class="btn" download>📄 Download Resume</a>
+  </div>
 
   <section>
     <h2>About Me</h2>
@@ -59,7 +119,7 @@
     <h2>Education</h2>
     <p><strong>University of Michigan – Ann Arbor</strong> (Aug. 2023 – May 2027)</p>
     <p>Bachelor of Science in Computer Science – GPA: 3.8 / 4.0</p>
-    <p><em>Relevant Coursework:</em> Data Structures and Algorithms, Computer Org, Web Systems, Databases, Discrete Math, Theory of Computation, Linear Algebra, Calculus</p>
+    <p><em>Relevant Coursework:</em> Data Structures, Algorithms, Computer Org, Web Systems, Databases, Discrete Math, Theory of Computation, Linear Algebra, Calculus</p>
   </section>
 
   <section>
@@ -71,12 +131,6 @@
       <li>Developed a RESTful API (FastAPI + Swagger UI) to connect Power Automate to internal tools</li>
       <li>Presented weekly live demos to technical and business stakeholders</li>
     </ul>
-
-    <p><strong>UROP Research Assistant – University of Michigan</strong> (Aug. 2023 – Apr. 2024)</p>
-    <ul>
-      <li>Cleaned functional diversity datasets, built dissimilarity matrices, and ran Mantel tests in R</li>
-      <li>Mapped IUCN species data onto EPM grids; presented award-winning poster at UROP Symposium</li>
-    </ul>
   </section>
 
   <section>
@@ -86,11 +140,6 @@
       <li>Built full-featured Instagram clone with CRUD posts/comments/likes and REST API backend</li>
       <li>Deployed on AWS EC2; used Bash scripting for deployment automation</li>
     </ul>
-
-    <p><strong>Pipelined Processor Simulator</strong> – C</p>
-    <ul>
-      <li>Simulated a 5-stage pipelined processor for the LC2K ISA with hazard handling and branch prediction</li>
-    </ul>
   </section>
 
   <section>
@@ -99,14 +148,11 @@
     <p><strong>Technologies:</strong> Flask, Dash, ReactJS, SQL, AWS, Redis, Power Platform, FastAPI, Cypress</p>
   </section>
 
-  <section>
-    <h2>Community Service</h2>
-    <p><strong>Kids for Kids – President & Co-founder (2012–2022)</strong></p>
-    <ul>
-      <li>Led nonprofit to combat summer learning loss by teaching 50+ students core academics and Spanish</li>
-      <li>Coordinated with community leaders for donations, housing, and support pipelines</li>
-    </ul>
-  </section>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 
 </body>
 </html>
