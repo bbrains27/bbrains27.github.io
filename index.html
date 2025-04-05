@@ -185,5 +185,26 @@
     }
   </script>
 
+  <script>
+    function displayGreeting() {
+      const hours = new Date().getHours();
+      let greeting = "Hello!";
+      if (hours < 12) {
+        greeting = "Good Morning!";
+      } else if (hours < 18) {
+        greeting = "Good Afternoon!";
+      } else {
+        greeting = "Good Evening!";
+      }
+      const greetingElement = document.createElement("p");
+      greetingElement.textContent = greeting;
+      greetingElement.style.textAlign = "center";
+      greetingElement.style.fontSize = "1.5em";
+      greetingElement.style.marginTop = "20px";
+      document.body.prepend(greetingElement);
+    }
+    displayGreeting();
+  </script>
+  
 </body>
 </html>
